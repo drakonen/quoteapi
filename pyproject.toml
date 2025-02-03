@@ -1,0 +1,10 @@
+[project]
+name = "quoteapi"
+version = "1.0.0"
+description = "Fetch a quote from remote source and return it"
+requires-python = ">=3.10"
+dependencies = [
+    "django>=5.1.5",
+    "djangorestframework>=3.15.2",
+    "markdown>=3.7",
+]
