@@ -4,7 +4,7 @@ from django.conf import settings
 from drf_excel.mixins import XLSXFileMixin
 
 from rest_framework import viewsets
-from rest_framework.decorators import action, authentication_classes, permission_classes
+from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from quotefetch.models import Quote
@@ -65,14 +65,3 @@ class QuoteViewSet(XLSXFileMixin, viewsets.ModelViewSet):
         quote.save()
 
         return response
-
-    def list(self, request):
-        queryset = Quote.objects.all()
-        serializer = FetchQuoteSerializer(queryset, many=True)
-        return Response(serializer.data)
-
-    # def create(self, request):
-    #     serializer = FetchQuoteSerializer(data=request.data, context={'request': request})
-    #     serializer.is_valid(raise_exception=True)
-    #     quote = serializer.save()
-    #     return Response(quote)

@@ -5,9 +5,7 @@ from django.urls import reverse
 
 from rest_framework.test import APITestCase
 
-# Create your tests here.
-
-# mock the requests.get method
+# mock for the requests.get method
 def mocked_requests_get(*args, **kwargs):
     class MockResponse:
         def __init__(self, json_data, status_code):
