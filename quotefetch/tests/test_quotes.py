@@ -5,6 +5,7 @@ from django.urls import reverse
 
 from rest_framework.test import APITestCase
 
+
 # mock for the requests.get method
 def mocked_requests_get(*args, **kwargs):
     class MockResponse:
@@ -15,26 +16,31 @@ def mocked_requests_get(*args, **kwargs):
         def json(self):
             return self.json_data
 
-    if args[0] == 'https://zenquotes.io/api/random':
-        mockdata = json.load(open('quotefetch/tests/fixtures/zenquotes.json'))
+    if args[0] == "https://zenquotes.io/api/random":
+        mockdata = json.load(open("quotefetch/tests/fixtures/zenquotes.json"))
         return MockResponse(mockdata, 200)
-    elif args[0] == 'https://dummyjson.com/quotes/random':
-        mockdata = json.load(open('quotefetch/tests/fixtures/dummyjson.json'))
+    elif args[0] == "https://dummyjson.com/quotes/random":
+        mockdata = json.load(open("quotefetch/tests/fixtures/dummyjson.json"))
         return MockResponse(mockdata, 200)
 
     return MockResponse(None, 404)
 
 
 class QuoteTest(APITestCase):
-    url = reverse('quote-random')
+    url = reverse("quote-random")
 
-    @mock.patch('requests.get', side_effect=mocked_requests_get)
+    @mock.patch("requests.get", side_effect=mocked_requests_get)
     def test_quote_random(self, mock_get):
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data['quote'], 'If you want to lift yourself up, lift up someone else.')
+        self.assertEqual(
+            response.data["quote"],
+            "If you want to lift yourself up, lift up someone else.",
+        )
 
-
-        response2 = self.client.get(self.url, headers={'source': 'zenquotes'})
+        response2 = self.client.get(self.url, headers={"source": "zenquotes"})
         self.assertEqual(response2.status_code, 200)
-        self.assertEqual(response2.data['quote'], 'When you believe in a thing, believe in it all the way, implicitly and unquestionable.')
+        self.assertEqual(
+            response2.data["quote"],
+            "When you believe in a thing, believe in it all the way, implicitly and unquestionable.",
+        )

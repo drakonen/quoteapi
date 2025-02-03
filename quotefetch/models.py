@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Quote(models.Model):
     retrieved_data = models.TextField()
     sent_data = models.TextField()  # ideally this would be in middleware.

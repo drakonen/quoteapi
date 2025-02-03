@@ -50,3 +50,14 @@ Exported formats:
 
 http://127.0.0.1:8000/quotes/random/ retrieve a random new quote, store it, return it
 http://127.0.0.1:8000/quotes/ list of retrieved quotes
+
+## Lint and formatter
+Lint:
+```bash
+uvx ruff check
+```
+
+Format:
+```bash
+uvx ruff format
+```
