@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'quotefetch.apps.QuotefetchConfig',
     'rest_framework',
     'quotefetch',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -130,7 +130,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-QUOTE_APIS = {
+QUOTE_API_ENDPOINTS = {
     'dummyjson': {
         'url': 'https://dummyjson.com/quotes/random',
         # 'quotefield': 'quote',
@@ -141,4 +141,8 @@ QUOTE_APIS = {
         # 'quotefield': 'q',
         # 'authorfield': 'a',
     },
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }

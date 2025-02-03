@@ -9,7 +9,7 @@ class Quote(models.Model):
     sent_data = models.TextField()
     quote = models.TextField()
     author = models.CharField(max_length=255, blank=True, null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

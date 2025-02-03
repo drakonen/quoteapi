@@ -33,3 +33,5 @@ Aptly named django app to fetch inspiring quotes from an other api.
     ```
    
 # Usage
+http://127.0.0.1:8000/quotes/random/ retrieve a random new quote, and store
+http://127.0.0.1:8000/quotes/ list of retrieved quotes
