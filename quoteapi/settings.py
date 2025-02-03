@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'quotefetch.apps.QuotefetchConfig',
     'rest_framework',
-    # 'quotefetch',
+    'quotefetch',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +129,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+QUOTE_APIS = {
+    'dummyjson': {
+        'url': 'https://dummyjson.com/quotes/random',
+        # 'quotefield': 'quote',
+        # 'authorfield': 'author',
+    },
+    'zenquotes': {
+        'url': 'https://zenquotes.io/api/random',
+        # 'quotefield': 'q',
+        # 'authorfield': 'a',
+    },
+}
