@@ -49,6 +49,7 @@ Exported formats:
  - Xlsx
 
 http://127.0.0.1:8000/quotes/random/ retrieve a random new quote, store it, return it
+
 http://127.0.0.1:8000/quotes/ list of retrieved quotes
 
 ## Lint and formatter
