@@ -32,9 +32,9 @@ Aptly named django app to fetch inspiring quotes from an other api.
    python manage.py runserver
     ```
 
-   or with Docker:
+   or with Docker compose:
    ```bash
-   ./run.sh
+   docker-compose up web
    ```
    
 # Usage
