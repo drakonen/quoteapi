@@ -1,6 +1,7 @@
 import requests
 
 from django.conf import settings
+from drf_excel.mixins import XLSXFileMixin
 
 from rest_framework import viewsets
 from rest_framework.decorators import action, authentication_classes, permission_classes
@@ -10,7 +11,12 @@ from quotefetch.models import Quote
 from quotefetch.serializers import FetchQuoteSerializer
 
 
-class QuoteViewSet(viewsets.ViewSet):
+class QuoteViewSet(XLSXFileMixin, viewsets.ModelViewSet):
+    queryset = Quote.objects.all()
+    serializer_class = FetchQuoteSerializer
+    filename = 'quotes.xlsx'
+
+
     # get
     def list(self, request):
         queryset = Quote.objects.all()

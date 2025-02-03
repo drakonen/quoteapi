@@ -5,7 +5,9 @@ description = "Fetch a quote from remote source and return it"
 requires-python = ">=3.10"
 dependencies = [
     "django>=5.1.5",
+    "djangorestframework-xml>=2.0.0",
     "djangorestframework>=3.15.2",
+    "drf-excel>=2.5.2",
     "drf-spectacular>=0.28.0",
     "markdown>=3.7",
     "requests>=2.32.3",

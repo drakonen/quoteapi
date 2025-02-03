@@ -93,6 +93,15 @@ wheels = [
 ]
 
 [[package]]
+name = "defusedxml"
+version = "0.7.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69", size = 75520 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61", size = 25604 },
+]
+
+[[package]]
 name = "django"
 version = "5.1.5"
 source = { registry = "https://pypi.org/simple" }
@@ -119,6 +128,31 @@ wheels = [
 ]
 
 [[package]]
+name = "djangorestframework-xml"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "defusedxml" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/45/74/b75939a779fddef1d3e108991f7edb199e6240f23b6aef64f3a222e1b4dd/djangorestframework-xml-2.0.0.tar.gz", hash = "sha256:35f6c811d0ab8c8466b26db234e16a2ed32d76381715257aebf4c7be2c202ca1", size = 5412 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0f/74/65485e0ceae183b9348cd080cc69126e498a95bcd5d37df84a598bf94bbd/djangorestframework_xml-2.0.0-py2.py3-none-any.whl", hash = "sha256:975955fbb0d49ac44a90bdeb33b7923d95b79884d283f983e116c80a936ef4d0", size = 6046 },
+]
+
+[[package]]
+name = "drf-excel"
+version = "2.5.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "djangorestframework" },
+    { name = "openpyxl" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d5/c3/f26abc0e3e8266ab84a10ad85c2242942f9860cca8e9cd6ec49a52d45896/drf_excel-2.5.2.tar.gz", hash = "sha256:b09893f36f1dc112dcc38ffab6e1d287334c0bb5a8165968e9cc30ff4a9d14c0", size = 26445 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f1/cd/c6855b6b5797c387d9173b4bc596b842c986c7362ae0b31d4cbbcd9a2372/drf_excel-2.5.2-py3-none-any.whl", hash = "sha256:73cbc4745533cb256fcaaa960187fb676a712a043ef36e515f33285ee5d5287a", size = 15061 },
+]
+
+[[package]]
 name = "drf-spectacular"
 version = "0.28.0"
 source = { registry = "https://pypi.org/simple" }
@@ -133,6 +167,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/da/b9/741056455aed00fa51a1df41fad5ad27c8e0d433b6bf490d4e60e2808bc6/drf_spectacular-0.28.0.tar.gz", hash = "sha256:2c778a47a40ab2f5078a7c42e82baba07397bb35b074ae4680721b2805943061", size = 237849 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fb/66/c2929871393b1515c3767a670ff7d980a6882964a31a4ca2680b30d7212a/drf_spectacular-0.28.0-py3-none-any.whl", hash = "sha256:856e7edf1056e49a4245e87a61e8da4baff46c83dbc25be1da2df77f354c7cb4", size = 103928 },
+]
+
+[[package]]
+name = "et-xmlfile"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d3/38/af70d7ab1ae9d4da450eeec1fa3918940a5fafb9055e934af8d6eb0c2313/et_xmlfile-2.0.0.tar.gz", hash = "sha256:dab3f4764309081ce75662649be815c4c9081e88f0837825f90fd28317d4da54", size = 17234 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c1/8b/5fe2cc11fee489817272089c4203e679c63b570a5aaeb18d852ae3cbba6a/et_xmlfile-2.0.0-py3-none-any.whl", hash = "sha256:7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa", size = 18059 },
 ]
 
 [[package]]
@@ -190,6 +233,18 @@ wheels = [
 ]
 
 [[package]]
+name = "openpyxl"
+version = "3.1.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "et-xmlfile" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3d/f9/88d94a75de065ea32619465d2f77b29a0469500e99012523b91cc4141cd1/openpyxl-3.1.5.tar.gz", hash = "sha256:cf0e3cf56142039133628b5acffe8ef0c12bc902d2aadd3e0fe5878dc08d1050", size = 186464 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c0/da/977ded879c29cbd04de313843e76868e6e13408a94ed6b987245dc7c8506/openpyxl-3.1.5-py2.py3-none-any.whl", hash = "sha256:5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2", size = 250910 },
+]
+
+[[package]]
 name = "pyyaml"
 version = "6.0.2"
 source = { registry = "https://pypi.org/simple" }
@@ -240,6 +295,8 @@ source = { virtual = "." }
 dependencies = [
     { name = "django" },
     { name = "djangorestframework" },
+    { name = "djangorestframework-xml" },
+    { name = "drf-excel" },
     { name = "drf-spectacular" },
     { name = "markdown" },
     { name = "requests" },
@@ -249,6 +306,8 @@ dependencies = [
 requires-dist = [
     { name = "django", specifier = ">=5.1.5" },
     { name = "djangorestframework", specifier = ">=3.15.2" },
+    { name = "djangorestframework-xml", specifier = ">=2.0.0" },
+    { name = "drf-excel", specifier = ">=2.5.2" },
     { name = "drf-spectacular", specifier = ">=0.28.0" },
     { name = "markdown", specifier = ">=3.7" },
     { name = "requests", specifier = ">=2.32.3" },

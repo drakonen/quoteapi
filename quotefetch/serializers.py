@@ -6,4 +6,4 @@ from quotefetch.models import Quote
 class FetchQuoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Quote
-        fields = '__all__'
+        fields = ['quote', 'author']
