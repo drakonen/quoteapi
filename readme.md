@@ -27,11 +27,19 @@ Aptly named django app to fetch inspiring quotes from an other api.
     ```
    
 # Running the server
-5. Run the server
+1. Run the server:
     ```bash
    python manage.py runserver
     ```
    
 # Usage
+API explorer is available at http://127.0.0.1:8000/
+
+
 http://127.0.0.1:8000/quotes/random/ retrieve a random new quote, and store
 http://127.0.0.1:8000/quotes/ list of retrieved quotes
+
+Exported formats:
+ - JSON
+ - XML
+ - Xlsx
