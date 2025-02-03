@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Quote(models.Model):
     retrieved_data = models.TextField()
-    sent_data = models.TextField()
+    sent_data = models.TextField()  # ideally this would be in middleware.
     quote = models.TextField()
     author = models.CharField(max_length=255, blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
